@@ -10,6 +10,7 @@ const APP_ROUTES: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'heroes', component: HeroesComponent },
   { path: 'heroe/:id', component: HeroeComponent },
+  { path: 'heroes/heroe/:id', component: HeroeComponent }, // Para que pueda visitarse también a través de /heroes/heroe/{id}
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 
