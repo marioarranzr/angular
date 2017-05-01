@@ -31,3 +31,5 @@ ng g c components/heroes -is      # Crea un component para la página heroes y l
 
 >Si en lugar de ver la página de cada heroe en /heroe/{id} lo queremos ver en heroes/heroe/{id} deberemos modificar el router:
 { path: 'heroes/heroe/:id', component: HeroeComponent },
+y la referencia en el html de los heroes a:
+<a [routerLink]="['/heroe',i]" class="btn btn-outline-primary">Ver más link...</a>
