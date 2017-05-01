@@ -1,0 +1,39 @@
+<h1>Directivas estructurales</h1>
+<hr />
+
+<div class="row">
+
+  <div class="col-md-6">
+
+    <h3>*ngIf</h3>
+    <hr />
+
+    <button (click) = "mostrar = !mostrar"
+      type="button" class="btn btn-primary btn-block">
+      Mostrar / Ocultar
+    </button>
+    <br>
+
+    <div *ngIf="mostrar"
+      class="card card-inverse card-primary mb-3 text-center">
+      <div class="card-block">
+        <blockquote class="card-blockquote">
+          <p>{{texto}}</p>
+          <footer>Autor <cite title="Autor">{{autor}}</cite></footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+
+    <h3>*ngFor</h3>
+    <hr />
+    <ul *ngFor="let personaje of personajes; let i=index"
+      class="list-group">
+      <li class="list-group-item">
+        {{i + 1}} - {{personaje}}
+      </li>
+    </ul>
+  </div>
+</div>
