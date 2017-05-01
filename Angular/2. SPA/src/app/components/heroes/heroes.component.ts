@@ -8,7 +8,7 @@ import { HeroesService, Heroe } from '../../services/heroes.services';
 })
 export class HeroesComponent implements OnInit {
 
-  heroes:Heroe[] = []
+  heroes:Heroe[] = [];
 
   constructor(private heroesService:HeroesService) {
 
@@ -17,6 +17,7 @@ export class HeroesComponent implements OnInit {
   ngOnInit() {
 
     this.heroes = this.heroesService.getHeroes();
+    console.log(this.heroes);
 
   }
 
