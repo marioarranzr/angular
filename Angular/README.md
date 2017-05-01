@@ -20,9 +20,9 @@ npm install tether --save
 ##### Components
 ```shell
 ng g c components/shared/navbar   # Crea un component para la navbar y lo colocamos en components/shared
-ng g c components/home        # Crea un component para la home y lo colocamos en components
-ng g c components/about       # Crea un component para la página de about y lo colocamos en components
-ng g c components/heroes -is  # Crea un component para la página heroes y lo colocamos en components (con *-is* evitamos que se creen los estilos)
+ng g c components/home            # Crea un component para la home y lo colocamos en components
+ng g c components/about           # Crea un component para la página de about y lo colocamos en components
+ng g c components/heroes -is      # Crea un component para la página heroes y lo colocamos en components (con *-is* evitamos que se creen los estilos)
 ```
 
 >Para hacer las animaciones entre cambios de página más suaves añadiremos las clases `animated fadeIn` y para que se cargue más rápidamente, añadimos también `fast`
