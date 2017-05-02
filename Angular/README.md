@@ -9,6 +9,7 @@ mpn start    # Lanzado dentro de la carpeta del proyecto (HolaMundo) compila, se
 ```
 
 #### 2. STS
+
 ##### Creación, configuración inicial y arranque del servidor
 ```shell
 ng new SPA                                  # Crear el proyecto
@@ -17,6 +18,7 @@ npm install bootstrap@4.0.0-alpha.6 --save  # Con el --save lo salvamos en las d
 npm install jquery --save
 npm install tether --save
 ```
+
 ##### Components
 ```shell
 ng g c components/shared/navbar   # Crea un component para la navbar y lo colocamos en components/shared

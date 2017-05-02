@@ -63,6 +63,11 @@ export class HeroesService {
   getHeroes():Heroe[] {
     return this.heroes;
   }
+
+  getHeroe(id:number):Heroe {
+    // validaciones
+    return this.heroes[id];
+  }
 }
 
 export interface Heroe {
