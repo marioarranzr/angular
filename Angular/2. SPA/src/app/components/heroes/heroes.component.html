@@ -1,4 +1,15 @@
-<h1>Héroes <small>Marvel y DC</small></h1>
+<h1 *ngIf="pagina == 'buscador'">Buscando <small>{{termino}}</small></h1>
+<h1 *ngIf="pagina == 'heroes'">Héroes <small>Marvel y DC</small></h1>
+<hr>
+
+<div class="row animated fadeIn fast" *ngIf="heroes.length == 0">
+  <div class="col-md-12">
+    <div class="alert alert-info">
+      No existen resultados con el término: {{termino}}
+    </div>
+  </div>
+
+</div>
 
 <div class="card-columns">
 

@@ -10,10 +10,12 @@ import { Router } from '@angular/router';
 export class HeroesComponent implements OnInit {
 
   heroes:Heroe[] = [];
+  pagina:string;
 
   constructor(private heroesService:HeroesService,
               private router:Router) {
     // console.log(this.heroes);
+    this.pagina = "heroes";
   }
 
   ngOnInit() {

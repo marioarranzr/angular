@@ -5,17 +5,20 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-buscar-heroes',
-  templateUrl: '../buscar-heroes/buscar-heroes.component.html',
+  templateUrl: '../heroes/heroes.component.html',
   styles: []
 })
 export class BuscarHeroesComponent implements OnInit {
 
   heroes:Heroe[] = [];
   termino:string;
+  pagina:string;
 
   constructor(private activatedRoute:ActivatedRoute,
               private heroesService:HeroesService,
               private router:Router) {
+    this.pagina = "buscador";
+
   }
 
   ngOnInit() {
