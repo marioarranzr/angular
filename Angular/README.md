@@ -29,4 +29,4 @@ ng g c components/heroes -is      # Crea un component para la página heroes y l
 
 >Para hacer las animaciones entre cambios de página más suaves añadiremos las clases `animated fadeIn` y para que se cargue más rápidamente, añadimos también `fast`
 
->En un component tenemos el `constructor` y el método que se crea por defecto `ngOnInit()`. El primero se crea antes; el `ngOnInit()` cuando se renderiza la página
+>En un component tenemos el `constructor` y el método que se crea por defecto `ngOnInit()`. El primero se lanza antes; el `ngOnInit()` cuando se renderiza la página
