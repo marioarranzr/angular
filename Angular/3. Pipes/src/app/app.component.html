@@ -1,0 +1,154 @@
+<div class="container">
+  <br>
+  <h1>Pipes</h1>
+  <hr>
+  <table class="table">
+    <thead class="thead-inverse">
+      <tr>
+        <th width="20%">Variable</th>
+        <th width="50%">Pipe</th>
+        <th width="30%">Producto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td> {{nombre}} </td>
+        <td> uppercase </td>
+        <td> {{nombre | uppercase}}</td>
+      </tr>
+      <tr>
+        <td> {{nombre}} </td>
+        <td> lowercase </td>
+        <td> {{nombre | lowercase}}</td>
+      </tr>
+      <tr>
+        <td> {{nombre}} </td>
+        <td> slice:3 </td>
+        <td> {{nombre | slice:3}}</td>
+      </tr>
+      <tr>
+        <td> {{nombre}} </td>
+        <td> slice:0:3 </td>
+        <td> {{nombre | slice:0:3}}</td>
+      </tr>
+      <tr>
+        <td> {{array}} </td>
+        <td> slice:1:5 </td>
+        <td> {{array | slice:1:5}}</td>
+      </tr>
+      <tr>
+        <td> {{array}} </td>
+        <td> let item of array | slice:5:20 </td>
+        <td>
+          <ul>
+            <li *ngFor="let item of array | slice:5:20">{{item}}</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td> {{PI}} </td>
+        <td>
+          <div style="opacity: 0.5;">
+            number:'minIntegerDigits.minFractionDigits-maxFractionDigits'
+          </div>
+          <div class="">
+            number:'3.0-2'
+          </div>
+        </td>
+        <td> {{PI | number:'3.0-2'}}</td>
+      </tr>
+      <tr>
+        <td> {{PI}} </td>
+        <td>
+          <div style="opacity: 0.5;">
+            number:'minIntegerDigits.minFractionDigits-maxFractionDigits'
+          </div>
+          <div class="">
+            number:'1.0-2'
+          </div>
+        </td>
+        <td> {{PI | number:'1.0-2'}}</td>
+      </tr>
+      <tr>
+        <td> {{PI}} </td>
+        <td>
+          <div style="opacity: 0.5;">
+            number:'minIntegerDigits.minFractionDigits-maxFractionDigits'
+          </div>
+          <div class="">
+            number:'.2-2'
+          </div>
+        </td>
+        <td> {{PI | number:'.2-2'}}</td>
+      </tr>
+      <tr>
+        <td> {{a}} </td>
+        <td> percent </td>
+        <td> {{a | percent}}</td>
+      </tr>
+      <tr>
+        <td> {{a}} </td>
+        <td>
+          <div style="opacity: 0.5;">
+            percent:'minIntegerDigits.minFractionDigits-maxFractionDigits'
+          </div>
+          <div class="">
+            percent:'2.2-2'
+          </div>
+        </td>
+        <td> {{a | percent:'2.2-2'}}</td>
+      </tr>
+      <tr>
+        <td> {{salario}} </td>
+        <td> currency </td>
+        <td> {{salario | currency}}</td>
+      </tr>
+      <tr>
+        <td> {{salario}} </td>
+        <td>
+          <div style="opacity: 0.5;">
+            currency[:currencyCode[:symbolDisplay[:digitInfo]]]
+          </div>
+          <div class="">
+            currency:'EUR'
+          </div>
+        </td>
+        <td> {{salario | currency:'EUR'}}</td>
+      </tr>
+      <tr>
+        <td> {{salario}} </td>
+        <td>
+          <div style="opacity: 0.5;">
+            currency[:currencyCode[:symbolDisplay[:digitInfo]]]
+          </div>
+          <div class="">
+            currency:'EUR':true
+          </div>
+        </td>
+        <td> {{salario | currency:'EUR':true}}</td>
+      </tr>
+      <tr>
+        <td> {{salario}} </td>
+        <td>
+          <div style="opacity: 0.5;">
+            currency[:currencyCode[:symbolDisplay[:digitInfo]]]
+          </div>
+          <div class="">
+            currency:'EUR':true:'4.0-0'
+          </div>
+        </td>
+        <td> {{salario | currency:'EUR':true:'4.0-0'}}</td>
+      </tr>
+      <tr>
+        <td> {{heroe}} </td>
+        <td> json </td>
+        <td>
+          <pre>
+            {{heroe | json}}
+          </pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
