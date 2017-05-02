@@ -1,5 +1,7 @@
-<h1 *ngIf="pagina == 'buscador'">Buscando <small>{{termino}}</small></h1>
-<h1 *ngIf="pagina == 'heroes'">Héroes <small>Marvel y DC</small></h1>
+<h1 *ngIf="pagina == 'buscador' && termino.length != 0; else elseBlock">Buscando <small>{{termino}}</small></h1>
+<ng-template #elseBlock>
+  <h1>Héroes <small>Marvel y DC</small></h1>
+</ng-template>
 <hr>
 
 <div class="row animated fadeIn fast" *ngIf="heroes.length == 0">
