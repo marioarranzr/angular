@@ -59,8 +59,9 @@ ng g c components/heroes -is      # Crea un component para la página heroes y l
 ```
 >El formato del currency esta formado por `[:currencyCode[:symbolDisplay[:digitInfo]]]` y si no se indica toma su valor por defecto que es minIntegerDigits=1, minFractionDigits=0, maxFractionDigits=3
 
-<pre>Al pasar una variable de tipo JSON, si lo intentamos imprimir únicamente con {{heroe}} nos saldrá [object Object], pero si le pasamos el JsonPipe nos saldrá el contenido y además lo metemos entre etiquetas HTML pre, formateado:
-heroe = {
+```shell
+{{heroe | json}}  # Al pasar una variable de tipo JSON, si lo intentamos imprimir únicamente con {{heroe}} nos saldrá [object Object], pero si le pasamos el JsonPipe nos saldrá el contenido y además lo metemos entre etiquetas HTML <pre>, formateado:
+{
   nombre: "Logan",
   clave:  "Wolverine",
   edad:   500,
@@ -68,6 +69,5 @@ heroe = {
     calle: "Calle Falsa",
     numero: 123
   }
-}  
-{{heroe | json}}
-</pre>
+}
+```
