@@ -8,7 +8,7 @@ mpn install  # La primera vez
 mpn start    # Lanzado dentro de la carpeta del proyecto (HolaMundo) compila, se queda en modo escucha y lanza el servidor en http://localhost:3000/
 ```
 
-#### 2. STS
+#### 2. SPA
 
 ##### Creación, configuración inicial y arranque del servidor
 ```shell
