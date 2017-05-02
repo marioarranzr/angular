@@ -30,3 +30,35 @@ ng g c components/heroes -is      # Crea un component para la página heroes y l
 >Para hacer las animaciones entre cambios de página más suaves añadiremos las clases `animated fadeIn` y para que se cargue más rápidamente, añadimos también `fast`
 
 >En un component tenemos el `constructor` y el método que se crea por defecto `ngOnInit()`. El primero se lanza antes; el `ngOnInit()` cuando se renderiza la página
+
+#### 3. Pipes
+
+```shell
+{{variable | uppercase}}            # Transforma en mayúsculas la variable
+{{variable | lowercase}}            # Transforma en minúsculas la variable
+{{variable | slice:3}}              # Recorta la variable desde la posición 3. Ej: Mario -> io
+{{variable | slice:0:3}}            # Recorta la variable desde la posición 0 hasta la 3. Ej: Mario -> Mar
+{{variable | slice:0:3 | lowercase} # Se pueden combinar. Ej: Mario -> mar
+{{array | slice:1:5}}               # Aplicable para arrays. Ej: array = [1,2,3,4,5,6,7,8,9,10]; -> [2,3,4,5]. Se puede usar en variables HTML como <li *ngFor="let item of array | slice:5:20">{{item}}</li>
+```
+>El formato del slice es `array_or_string_expression | slice:start[:end]`
+
+```shell
+{{numero | number:'3.0-2'}}         # Se indica la cantidad de dígitos para parte entera, mínimo de dígitos para parte decimal y máximo. Ej: 3.1415926 -> 003.14
+{{numero | number:'.1-1'}}          # Ej: 3.1415926 -> 3.1
+{{numero | percent}}                # Ej: 0.234 -> 23.4%
+{{numero | percent:'2.2-2'}}        # También se puede establecer un digitInfo Ej: 3.1415926 -> 3.1
+```
+>El formato del digitInfo es siempre un string formado por `'{minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}'` y si no se indica toma su valor por defecto que es minIntegerDigits=1, minFractionDigits=0, maxFractionDigits=3
+
+```shell
+{{salario | currency}}                    # Ej: 1234.5 -> USD1,234.50
+{{salario | currency:'EUR'}}              # Ej: 1234.5 -> EUR1,234.50
+{{salario | currency:'EUR':true}}         # Ej: 1234.5 -> €1,234.50
+{{salario | currency:'EUR':true:'4.0-0'}} # Ej: 1234.5 -> €1,235
+```
+>El formato del currency esta formado por `[:currencyCode[:symbolDisplay[:digitInfo]]]` y si no se indica toma su valor por defecto que es minIntegerDigits=1, minFractionDigits=0, maxFractionDigits=3
+
+```shell
+<pre> {{heroe_json | json}} </pre>      
+```
