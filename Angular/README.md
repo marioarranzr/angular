@@ -94,3 +94,25 @@ ng g c components/heroes -is      # Crea un component para la página heroes y l
   }
 }
 ```
+```shell
+promesa = new Promise( (resolve, rejected) => {
+  setTimeout(
+    () => resolve('Llegó el dato!'),
+    2300
+  );
+});
+{{promesa | async}}  # Para pasar una variable asíncrona, se queda pendiente a que se devuelva para imprimirse
+```
+```shell
+{{fecha | date:'medium'}}      # Ej: 3 may. 2017 21:48:19
+{{fecha | date:'MMMM - dd'}}   # Ej: mayo - 03
+```
+>Para cambiar el idioma de nuestra aplicación (y que por ejemplo nuestra fecha aparezca en Español), en el app.module.ts importaremos `import { LOCALE_ID } from '@angular/core';` y añadiremos un elemento en el apartado de providers
+```shell
+providers: [
+    { provide: LOCALE_ID, useValue: 'es' }
+  ],
+```
+```shell
+{{nombre | capitalizado}}   # Aplicamos a una variable el pipe que definamos, en este caso capitalizdo. Habrá que definirlo como un componente, pero con ng2-pipe y añadir el Pipe creado en el app.module.ts en el apartado de declarations
+```
