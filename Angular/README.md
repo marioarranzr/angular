@@ -15,7 +15,15 @@
 
 ### Comandos usados:
 
->Al hacer la instalación en Windows `constructor` y el método que se crea por defecto `ngOnInit()`. El primero se lanza antes; el `ngOnInit()` cuando se renderiza la página
+>Al hacer la instalación en Windows hay veces que da problemas.
+Por ejemplo The "@angular/compiler-cli" package was not properly installed.
+Para solucionarlo ejecutar cmd en modo administrador y realiza la instalación del angular-cli desde cero:
+```shell
+npm uninstall -g @angular/cli
+npm cache clean
+npm install -g @angular/cli@latest
+```
+Cerramos la consola y creamos un nuevo proyecto con `ng new {nombreProyecto}` o nos vamos a uno ya creado y hacemos `npm install`, `ng build` (nos debería compilar correctamente) y por último `ng serve`
 
 #### 1. HolaMundo
 ```shell
