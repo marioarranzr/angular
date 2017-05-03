@@ -23,7 +23,7 @@ npm uninstall -g @angular/cli
 npm cache clean
 npm install -g @angular/cli@latest
 ```
-Cerramos la consola y creamos un nuevo proyecto con `ng new {nombreProyecto}` o nos vamos a uno ya creado y hacemos `npm install`, `ng build` (nos debería compilar correctamente) y por último `ng serve`
+>Cerramos la consola y creamos un nuevo proyecto con `ng new {nombreProyecto}` o nos vamos a uno ya creado y hacemos `npm install`, `ng build` (nos debería compilar correctamente) y por último `ng serve`
 
 #### 1. HolaMundo
 ```shell
