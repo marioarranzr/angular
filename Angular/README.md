@@ -1,6 +1,21 @@
 # Angular
 
+### Instalaciones:
+- Node.js
+- TypeScript
+- Angular-cli
+- Atom y snippets:
+  - Angular 2 Type Script Snippets
+  - Atom Bootstrap3
+  - Atom Typescript
+  - File Icons
+  - Platformio Ide Terminal
+  - Atom Bootstrap4
+  - V Bootstrap4
+
 ### Comandos usados:
+
+>Al hacer la instalación en Windows `constructor` y el método que se crea por defecto `ngOnInit()`. El primero se lanza antes; el `ngOnInit()` cuando se renderiza la página
 
 #### 1. HolaMundo
 ```shell
