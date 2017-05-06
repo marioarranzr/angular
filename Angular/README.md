@@ -138,3 +138,9 @@ providers: [
 `transform(value: string, todas:boolean = true): string`<br>
 Podremos incluir los argumentos individualmente o en un array
 `transform(value: string, ...args: any[]): string`
+
+```shell
+# Incorporando elementos inseguros
+<iframe src="http://www.youtube.com/embed/M7lc1UVf-VE" width="560" height="315"></iframe> # Ningún problema
+<iframe src="{{video}}" width="560" height="315"></iframe> # También puede declararse con [src]="video"
+```
