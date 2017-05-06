@@ -84,6 +84,7 @@ ng g c components/heroes -is      # Crea un component para la página heroes y l
 
 ```shell
 {{heroe | json}}  # Al pasar una variable de tipo JSON, si lo intentamos imprimir únicamente con {{heroe}} nos saldrá [object Object], pero si le pasamos el JsonPipe nos saldrá el contenido y además lo metemos entre etiquetas HTML <pre>, formateado:
+
 {
   nombre: "Logan",
   clave:  "Wolverine",
@@ -95,13 +96,14 @@ ng g c components/heroes -is      # Crea un component para la página heroes y l
 }
 ```
 ```shell
+{{promesa | async}}  # Al pasar una variable asíncrona con el pipe async, se queda esperando a que se devuelva, para cuandolo haga imprimirse
+
 promesa = new Promise( (resolve, rejected) => {
   setTimeout(
     () => resolve('Llegó el dato!'),
     2300
   );
 });
-{{promesa | async}}  # Para pasar una variable asíncrona, se queda pendiente a que se devuelva para imprimirse
 ```
 ```shell
 {{fecha | date:'medium'}}      # Ej: 3 may. 2017 21:48:19
@@ -114,5 +116,10 @@ providers: [
   ],
 ```
 ```shell
-{{nombre | capitalizado}}   # Aplicamos a una variable el pipe que definamos, en este caso capitalizdo. Habrá que definirlo como un componente, pero con ng2-pipe y añadir el Pipe creado en el app.module.ts en el apartado de declarations
+{{nombre2 | capitalizado:false}}  # Aplicamos a una variable el pipe que definamos, en este caso capitalizado. Habrá que definirlo como un componente, pero con ng2-pipe y añadir el Pipe creado en el app.module.ts en el apartado de declarations.
 ```
+
+>La clase que implementa PipeTransform tiene un método
+`transform(value: string, todas:boolean = true): string`<br>
+Podremos incluir los argumentos individualmente o en un array
+`transform(value: string, ...args: any[]): string`
