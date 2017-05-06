@@ -140,7 +140,17 @@ Podremos incluir los argumentos individualmente o en un array
 `transform(value: string, ...args: any[]): string`
 
 ```shell
-# Incorporando elementos inseguros
+# Incorporando elementos inseguros (como vídeos)
 <iframe src="http://www.youtube.com/embed/M7lc1UVf-VE" width="560" height="315"></iframe> # Ningún problema
-<iframe src="{{video}}" width="560" height="315"></iframe> # También puede declararse con [src]="video"
+# De este modo nos daría un error el navegador <iframe src="{{video}}" width="560" height="315"></iframe>
+# Para crear un Dom Seguro y que nos permita introducir una varíable con una URL de un vídeo deberemos crear un Pipe como un componente, pero con ng2-pipe y añadir el Pipe creado en el app.module.ts en el apartado de declarations. <br>
+
+export class DomseguroPipe implements PipeTransform {
+
+  constructor(private domSanitizer:DomSanitizer) { }
+
+  transform(value: string, url: string): any {
+    return this.domSanitizer.bypassSecurityTrustResourceUrl(url + value);
+  }
+}
 ```
