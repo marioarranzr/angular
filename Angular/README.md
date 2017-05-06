@@ -50,6 +50,18 @@ ng g c components/about           # Crea un component para la página de about y
 ng g c components/heroes -is      # Crea un component para la página heroes y lo colocamos en components (con *-is* evitamos que se creen los estilos)
 ```
 
+```shell
+# Ejemplo de promesa con función de flecha
+promesa = new Promise((resolve, reject) => {
+  let condicion:boolean = true;
+  if (condicion) {
+    resolve(/* valor */);  // Resuelta con éxito
+  } else {
+    reject(/* motivo */);  // Error, rechazada
+  }
+});
+```
+
 >Para hacer las animaciones entre cambios de página más suaves añadiremos las clases `animated fadeIn` y para que se cargue más rápidamente, añadimos también `fast`
 
 >En un component tenemos el `constructor` y el método que se crea por defecto `ngOnInit()`. El primero se lanza antes; el `ngOnInit()` cuando se renderiza la página
@@ -110,13 +122,16 @@ promesa = new Promise( (resolve, rejected) => {
 {{fecha | date:'MMMM - dd'}}   # Ej: mayo - 03
 ```
 >Para cambiar el idioma de nuestra aplicación (y que por ejemplo nuestra fecha aparezca en Español), en el app.module.ts importaremos `import { LOCALE_ID } from '@angular/core';` y añadiremos un elemento en el apartado de providers
-```shell
+`
 providers: [
     { provide: LOCALE_ID, useValue: 'es' }
-  ],
-```
+  ]
+`
+
 ```shell
-{{nombre2 | capitalizado:false}}  # Aplicamos a una variable el pipe que definamos, en este caso capitalizado. Habrá que definirlo como un componente, pero con ng2-pipe y añadir el Pipe creado en el app.module.ts en el apartado de declarations.
+{{nombre | capitalizado}}
+# Aplicamos a una variable el pipe que definamos, en este caso capitalizdo.
+# Habrá que definirlo como un componente, pero con ng2-pipe y añadir el Pipe creado en el app.module.ts en el apartado de declarations
 ```
 
 >La clase que implementa PipeTransform tiene un método
