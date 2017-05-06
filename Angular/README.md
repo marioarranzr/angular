@@ -79,7 +79,10 @@ ng g c components/heroes -is      # Crea un component para la página heroes y l
 como rutas deseemos crear. <br>
 En este archivo deberá ir la línea: <br>
 `export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES, {useHash:true});` <br>
-con el atributo `useHash` se indicará si las URLs llevan o no el caracter `#`
+con el atributo `useHash` se indicará si las URLs llevan o no el caracter `#` <br>
+Por último, los enlaces que queramos que pasen por el router deberán llevar atributos del estilo: <br>
+`[routerLink]="['home']"` <br>
+Para gestionar una clase (por ejemplo la clase `active` para el navbar) según la ruta, usaremos con el atributo `routerLinkActive="active"` en la etiqueta HTML correspondiente.
 
 
 #### 3. Pipes
@@ -178,3 +181,5 @@ export class DomseguroPipe implements PipeTransform {
   }
 }
 ```
+
+#### 4. SpotiApp
