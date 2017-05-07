@@ -55,7 +55,8 @@ npm install tether --save
 ```
 
 ##### Components
->###### Creación de componentes:
+
+###### Creación de componentes:
 ```shell
 ng g c components/shared/navbar   # Crea un component para la navbar y lo colocamos en components/shared
 ng g c components/home            # Crea un component para la home y lo colocamos en components
