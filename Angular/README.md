@@ -88,7 +88,7 @@ Para gestionar una clase (por ejemplo la clase `active` para el navbar) según l
 #### 3. Pipes
 
 ##### Transformación, recorte y visualización de variables
->```shell
+```shell
 {{variable | uppercase}}            # Transforma en mayúsculas la variable
 {{variable | lowercase}}            # Transforma en minúsculas la variable
 {{variable | slice:3}}              # Recorta la variable desde la posición 3. Ej: Mario -> io
@@ -99,7 +99,7 @@ Para gestionar una clase (por ejemplo la clase `active` para el navbar) según l
 >El formato del slice es `array_or_string_expression | slice:start[:end]`
 
 ##### Números
->```shell
+```shell
 {{numero | number:'3.0-2'}}         # Se indica la cantidad de dígitos para parte entera, mínimo de dígitos para parte decimal y máximo. Ej: 3.1415926 -> 003.14
 {{numero | number:'.1-1'}}          # Ej: 3.1415926 -> 3.1
 {{numero | percent}}                # Ej: 0.234 -> 23.4%
@@ -108,7 +108,7 @@ Para gestionar una clase (por ejemplo la clase `active` para el navbar) según l
 >El formato del digitInfo es siempre un string formado por `'{minIntegerDigits}.{minFractionDigits}-{maxFractionDigits}'` y si no se indica toma su valor por defecto que es minIntegerDigits=1, minFractionDigits=0, maxFractionDigits=3
 
 ##### Importes
->```shell
+```shell
 {{salario | currency}}                    # Ej: 1234.5 -> USD1,234.50
 {{salario | currency:'EUR'}}              # Ej: 1234.5 -> EUR1,234.50
 {{salario | currency:'EUR':true}}         # Ej: 1234.5 -> €1,234.50
@@ -154,7 +154,7 @@ providers: [
 `
 
 ##### Pipes personalizados
->```shell
+```shell
 {{nombre | capitalizado}} # Aplicamos a una variable el pipe que definamos, en este caso capitalizdo.
 ```
 >Habrá que definirlo como un componente, pero con `ng2-pipe` y añadir el Pipe creado en el `app.module.ts` en el apartado de declarations
@@ -164,7 +164,7 @@ providers: [
 Podremos incluir los argumentos individualmente o en un array
 `transform(value: string, ...args: any[]): string`
 
->```html
+```html
 <iframe src="http://www.youtube.com/embed/M7lc1UVf-VE" width="560" height="315"></iframe> # Ningún problema
 <iframe src="{{video}}" width="560" height="315"></iframe> # De este modo nos daría un error el navegador
 ```
