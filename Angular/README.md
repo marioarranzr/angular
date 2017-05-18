@@ -54,6 +54,12 @@ npm install jquery --save
 npm install tether --save
 ```
 
+```shell
+"exclude": [
+  "../node_modules"  # Añadir esta línea en el tsconfig.json de la raíz del proyecto para evitar que se relentice al compilar esta carpeta cada vez
+]
+```
+
 ##### Components
 
 ###### Creación de componentes:
