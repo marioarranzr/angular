@@ -39,8 +39,8 @@ promesa = new Promise((resolve, reject) => {
 
 #### 1. HolaMundo
 ```shell
-mpn install  # La primera vez
-mpn start    # Lanzado dentro de la carpeta del proyecto (HolaMundo) compila, se queda en modo escucha y lanza el servidor en http://localhost:3000/
+npm install  # La primera vez
+npm start    # Lanzado dentro de la carpeta del proyecto (HolaMundo) compila, se queda en modo escucha y lanza el servidor en http://localhost:3000/
 ```
 
 #### 2. SPA
