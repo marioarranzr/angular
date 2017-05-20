@@ -1,3 +1,72 @@
-<p>
-  artista works!
-</p>
+<div *ngIf="artista" class=" container main-container animated fadeIn fast">
+
+  <div class="row">
+
+    <div class="col-md-3">
+      <img [src]="artista.images | sinfoto" class="img-circle img-thumbnail">
+      <br>
+    </div>
+
+    <div class="col-md-9">
+      <h3>{{artista.name}} <small> Popularidad {{artista.popularity}}</small></h3>
+      <hr>
+      <a [href]="artista.external_urls?.spotify"
+        class="btn btn-outline-success">
+        Ver página
+      </a>
+
+      <a [routerLink] = "['/buscar']"
+        class="btn btn-outline-danger">
+        Volver
+      </a>
+    </div>
+
+  </div>
+
+  <div *ngIf="tracks" class="container">
+
+  </div>
+  <div class="container">
+
+    <h3>Tracks de {{artista.name}}</h3>
+    <div class="row">
+
+      <div class="col-md-12">
+
+        <div class="table-responsive">
+
+          <table class="table table-inverse table-hover">
+            <thead>
+              <th>#</th>
+              <th>Foto</th>
+              <th>Canción</th>
+              <th>Popularidad</th>
+              <th>Preview</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let track of tracks; let i = index">
+                <td>{{i + 1}}</td>
+                <td>
+                  <img [src]="track.album?.images | sinfoto" class="img-fluid img-50">
+                </td>
+                <td>{{track.name}}</td>
+                <td>{{track.popularity}}%</td>
+                <td>
+                  <!-- <audio controls>
+                    <source [src]="track.preview_url">
+                    Tu navegador es muy antiguo
+                  </audio> -->
+                  <iframe [src]="track.uri | domseguro:'https://open.spotify.com/embed?uri='" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
