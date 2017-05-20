@@ -199,3 +199,12 @@ export class DomseguroPipe implements PipeTransform {
 ```
 
 #### 4. SpotiApp
+
+#### 5. Deseos - ionic mobile app
+### Instalaciones e inicio:
+- `npm install -g cordova ionic`
+- `ionic start appName tabs` clonará el proyecto de ionic tabs, lo que nos permitirá tener un HolaMundo sobre el que empezar
+- Nos creamos una cuenta en [ionic apps](https://apps.ionic.io/apps/) y podremos enlazar con nuestra cuenta y linkar la aplicación para probarla con cualquier dispositivo:
+  - ionic login
+  - ionic link
+  - ionic upload
