@@ -90,7 +90,16 @@ con el atributo `useHash` se indicará si las URLs llevan o no el caracter `#` <
 Por último, los enlaces que queramos que pasen por el router deberán llevar atributos del estilo: <br>
 `[routerLink]="['home']"` <br>
 Para gestionar una clase (por ejemplo la clase `active` para el navbar) según la ruta, usaremos con el atributo `routerLinkActive="active"` en la etiqueta HTML correspondiente.
-
+```html
+<ul class="navbar-nav mr-auto">
+  <li class="nav-item" routerLinkActive="active">
+    <a class="nav-link" [routerLink]="['home']">Home</a>
+  </li>
+  <li class="nav-item" routerLinkActive="active">
+    <a class="nav-link" [routerLink]="['buscar']">Buscar</a>
+  </li>
+</ul>
+```
 
 #### 3. Pipes
 
