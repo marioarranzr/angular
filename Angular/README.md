@@ -208,3 +208,9 @@ export class DomseguroPipe implements PipeTransform {
   - ionic login
   - ionic link
   - ionic upload
+- Para lanzar nuestro servidor local `ionic serve`
+
+### Instalaciones e inicio:
+>La aplicación se compone de 2 tabs para los que crearemos 2 plantillas html y 2 componentes TypeScript
+Tenemos un servicio que se encarga de consultar y entregar los datos a estos componentes. Para ello, lo importaremos desde los componentes `import { ListaDeseosService } from '../../app/services/lista-deseos.service';` y lo añadimos en el constructor para poder usarlo desde la plantilla HTML `constructor(private listaDeseosService:ListaDeseosService) {}`
+De este modo podremos acceder, por ejemplo, con un `*ngFor="let lista of listaDeseosService.listas"`
