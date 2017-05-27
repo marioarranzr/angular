@@ -4,8 +4,18 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
-  <h1>Pendientes</h1>
+  <ion-card padding *ngFor="let lista of listaDeseosService.listas">
+
+    <ion-card-header>
+      {{lista.nombre}}
+    </ion-card-header>
+
+    <ion-card-content>
+
+    </ion-card-content>
+
+  </ion-card>
 
 </ion-content>
