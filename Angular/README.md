@@ -8,6 +8,7 @@
   - Angular 2 Type Script Snippets
   - Atom Bootstrap3
   - Atom Typescript
+  - autocomplete-js-import
   - File Icons
   - Platformio Ide Terminal
   - Atom Bootstrap4
