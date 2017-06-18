@@ -6,31 +6,34 @@
 
 <ion-content padding>
 
-  <ion-card *ngFor="let lista of listaDeseosService.listas">
+  <ion-card *ngFor="let lista of listaDeseosService.listas; let i = index">
 
-    <ion-card-header>
+    <ion-card-header (click)="verDetalles(lista,i)"
+      color="dark">
       {{lista.nombre}}
+      <ion-note item-right>
+        {{lista.items.length}} items
+      </ion-note>
     </ion-card-header>
 
     <ion-card-content>
       <ion-list>
-        <ion-item>
-          <ion-icon ios="ios-arrow-dropdown-circle" md="md-arrow-dropdown-circle">
-            Tetris
-          </ion-icon>
+        <ion-item
+          *ngFor="let item of lista.items | slice:0:2"
+          (click)="verDetalles(lista,i)">
+          <ion-icon
+            *ngIf="!item.completado"
+            item-left ios="ios-square-outline" md="md-square-outline"></ion-icon>
+          <ion-icon
+            *ngIf="item.completado"
+            item-left ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
+            <h2>{{item.nombre}}</h2>
         </ion-item>
-        <ion-item>
-          <ion-icon ios="ios-arrow-dropdown-circle" md="md-arrow-dropdown-circle">
-            Tetris
-          </ion-icon>
-        </ion-item>
-        <ion-item>
-          <ion-icon ios="ios-arrow-dropdown-circle" md="md-arrow-dropdown-circle">
-            Tetris
-          </ion-icon>
+        <ion-item *ngIf="lista.items.length > 2">
+          <ion-icon color="primary" ios="ios-arrow-dropdown" md="md-arrow-dropdown"></ion-icon>
+
         </ion-item>
       </ion-list>
-
     </ion-card-content>
 
   </ion-card>

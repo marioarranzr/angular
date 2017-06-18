@@ -211,7 +211,16 @@ export class DomseguroPipe implements PipeTransform {
   - ionic upload
 - Para lanzar nuestro servidor local `ionic serve`
 
-### Instalaciones e inicio:
+### Aplicación:
 >La aplicación se compone de 2 tabs para los que crearemos 2 plantillas html y 2 componentes TypeScript
 Tenemos un servicio que se encarga de consultar y entregar los datos a estos componentes. Para ello, lo importaremos desde los componentes `import { ListaDeseosService } from '../../app/services/lista-deseos.service';` y lo añadimos en el constructor para poder usarlo desde la plantilla HTML `constructor(private listaDeseosService:ListaDeseosService) {}`
 De este modo podremos acceder, por ejemplo, con un `*ngFor="let lista of listaDeseosService.listas"`
+
+### Datastorage:
+>Usaremos el Datastorage del dispositivo para almacenar os datos de la aplicación
+`localStorage.setItem("data", item)`
+`localStorage.getItem("data")`
+Con `JSON.stringify(objeto)` y `JSON.parse(localStorage.getItem("data")` convertimos a formato JSON y recuperamos nuestro JSON en forma de objeto, para guardar en el localStorage y recuperar de este, respectivamente
+
+### Manejo de clases desde angular
+>Para indicar a un elemento HTML que aplique una clase dependiendo de una variable, podremos hacerlo de esta manera `[class.nombreClase]="item.condicion"`

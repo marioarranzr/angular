@@ -7,13 +7,23 @@ export class ListaDeseosService {
   listas:Lista[] = [];
 
   constructor() {
-
-    let lista1 = new Lista("Compras de supermercado");
-    let lista2 = new Lista("Juegos");
-    let lista3 = new Lista("Cosas");
-
-    this.listas.push(lista1, lista2, lista3);
-
+    this.cargarData();
     console.log("servicio inicializado");
+  }
+
+  actualizarData() {
+    localStorage.setItem("data", JSON.stringify(this.listas));
+  }
+
+  cargarData() {
+    let listasEnDataStorage = JSON.parse(localStorage.getItem("data"));
+    if (listasEnDataStorage) {
+      this.listas = listasEnDataStorage;
+    }
+  }
+
+  agregarLista(lista:Lista) {
+    this.listas.push(lista);
+    this.actualizarData();
   }
 }
