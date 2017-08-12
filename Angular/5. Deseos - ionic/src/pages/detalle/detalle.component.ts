@@ -27,6 +27,17 @@ export class DetalleComponent implements OnInit {
   actualizarItem(item:ListaItem) {
 
     item.completado = !item.completado;
+
+    let todosMarcados = true;
+    for (let item of this.lista.items) { // gracias al let podemos llamar item a la variable local
+      if (!item.completado) {
+        todosMarcados = false;
+        break;
+      }
+    }
+
+    this.lista.completada = todosMarcados;
+
     this.listaDeseosService.actualizarData();
   }
 
@@ -38,19 +49,14 @@ export class DetalleComponent implements OnInit {
 
   showConfirm() {
     let confirm = this.alertController.create({
-      title: 'Use this lightsaber?',
-      message: 'Do you agree to use this lightsaber to do good across the intergalactic galaxy?',
-      buttons: [
+      title: 'ELiminar lista',
+      message: '¿Estás seguro de que deseas eliminar la lista?',
+      buttons: ['Cancelar',
         {
-          text: 'Disagree',
+          text: 'Eliminar',
           handler: () => {
-            console.log('Disagree clicked');
-          }
-        },
-        {
-          text: 'Agree',
-          handler: () => {
-            console.log('Agree clicked');
+            this.listaDeseosService.eliminarLista(this.id);
+            this.navController.pop();
           }
         }
       ]

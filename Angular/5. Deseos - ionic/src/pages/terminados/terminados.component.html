@@ -1,11 +1,51 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Terminados</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Lista de completados</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 
-  <h1>Nada</h1>
+  <ion-grid *ngIf="(listaDeseosService.listas | pendientes:true).length === 0">
+    <ion-row>
+      <ion-col class="text-center caja-vacia">
+        <ion-icon class="icono-grande" ios="ios-sunny" md="md-sunny"></ion-icon>
+        <p>
+          No hay ninguna lista
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-card *ngFor="let lista of listaDeseosService.listas | pendientes:true; let i = index">
+
+    <ion-card-header (click)="verDetalles(lista,i)" color="dark">
+      {{lista.nombre}}
+      <ion-note item-right>
+        {{lista.items.length}} items
+      </ion-note>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item
+          *ngFor="let item of lista.items | slice:0:2"
+          (click)="verDetalles(lista,i)">
+          <ion-icon
+            *ngIf="!item.completado"
+            item-left ios="ios-square-outline" md="md-square-outline"></ion-icon>
+          <ion-icon
+            *ngIf="item.completado"
+            item-left ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
+            <h2>{{item.nombre}}</h2>
+        </ion-item>
+        <ion-item *ngIf="lista.items.length > 2" class="text-center" (click)="verDetalles(lista,i)">
+          <ion-icon color="primary" ios="ios-arrow-dropdown" md="md-arrow-dropdown"></ion-icon>
+
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+
+  </ion-card>
 
 </ion-content>

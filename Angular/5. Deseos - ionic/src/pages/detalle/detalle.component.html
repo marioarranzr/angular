@@ -10,9 +10,7 @@
     <ion-card-header>
       <ion-item>
         <ion-label floating>Nombre de la lista</ion-label>
-        <ion-input
-          [(ngModel)]="lista.nombre"
-          type="text"></ion-input>
+        <ion-input [(ngModel)]="lista.nombre" type="text"></ion-input>
       </ion-item>
     </ion-card-header>
     <ion-card-content>
@@ -20,11 +18,9 @@
         <ion-item
           (click)="actualizarItem(item)"
           *ngFor="let item of lista.items">
-          <ion-icon
-            *ngIf="!item.completado"
+          <ion-icon *ngIf="!item.completado"
             item-left ios="ios-square-outline" md="md-square-outline"></ion-icon>
-          <ion-icon
-            *ngIf="item.completado"
+          <ion-icon *ngIf="item.completado"
             item-left ios="ios-checkbox-outline" md="md-checkbox-outline"></ion-icon>
             <h2 [class.tachado]="item.completado">{{item.nombre}}</h2>
         </ion-item>
