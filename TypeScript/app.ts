@@ -1,4 +1,7 @@
-
+//console.log(12 == '12');
+console.log(3 === +'2' + 1);
+//console.log(45 == '4' + '5');
+//console.log(45 !== '45');
 // Uso de Let y Const
 let nombre:string = "Ricardo Tapia";
 let edad:number = 23;
@@ -7,7 +10,6 @@ const PERSONAJE : {nombre:string, edad:number} = {
   nombre: nombre,
   edad: edad
 };
-
 
 // Cree una interfaz que sirva para validar el siguiente objeto
 interface superheroe {

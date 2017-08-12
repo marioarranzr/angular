@@ -1,11 +1,15 @@
+//console.log(12 == '12');
+console.log(3 === +'2' + 1);
+//console.log(45 == '4' + '5');
+//console.log(45 !== '45');
 // Uso de Let y Const
-let nombre = "Ricardo Tapia";
-let edad = 23;
-const PERSONAJE = {
+var nombre = "Ricardo Tapia";
+var edad = 23;
+var PERSONAJE = {
     nombre: nombre,
     edad: edad
 };
-let batman = {
+var batman = {
     nombre: "Bruno Díaz",
     artesMarciales: ["Karate", "Aikido", "Wing Chun", "Jiu-Jitsu"]
 };
@@ -13,20 +17,21 @@ let batman = {
 function resultadoDoble(a, b) {
     return (a + b) * 2;
 }
-let resultadoDoble2 = (a, b) => (a + b) * 2;
+var resultadoDoble2 = function (a, b) { return (a + b) * 2; };
 // Función con parametros obligatorios, opcionales y por defecto
 // donde NOMBRE = obligatorio
 //       PODER  = opcional
 //       ARMA   = por defecto = "arco"
-function getAvenger(nombre, poder, arma = "arco") {
-    let mensaje;
+function getAvenger(nombre, poder, arma) {
+    if (arma === void 0) { arma = "arco"; }
+    var mensaje;
     if (poder) {
         // mensaje = nombre + " tiene el poder de: " + poder + " y un arma: " + arma;
-        mensaje = ` ${nombre} tiene el poder de: ${poder} y un arma: ${arma}`;
+        mensaje = " " + nombre + " tiene el poder de: " + poder + " y un arma: " + arma;
     }
     else {
         // mensaje = nombre + " tiene un " + poder
-        mensaje = ` ${nombre} tiene un ${poder}`;
+        mensaje = " " + nombre + " tiene un " + poder;
     }
 }
 ;
@@ -37,12 +42,13 @@ function getAvenger(nombre, poder, arma = "arco") {
 //   * altura
 // También un método que calcule el área  =  base * altura,
 // ese método debe de retornar un numero.
-class Rectangulo {
-    constructor(base, altura) {
+var Rectangulo = (function () {
+    function Rectangulo(base, altura) {
         this.base = base;
         this.altura = altura;
     }
-    calcularArea() {
+    Rectangulo.prototype.calcularArea = function () {
         return this.base * this.altura;
-    }
-}
+    };
+    return Rectangulo;
+}());
