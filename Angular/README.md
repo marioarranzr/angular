@@ -24,6 +24,10 @@ npm uninstall -g @angular/cli
 npm cache clean
 npm install -g @angular/cli@latest
 ```
+>Si no se soluciona, dentro de nuestro proyecto, en la carpeta que contiene a src, hacemos:
+```shell
+npm i @angular/compiler-cli
+```
 >Cerramos la consola y creamos un nuevo proyecto con `ng new {nombreProyecto}` o nos vamos a uno ya creado y hacemos `npm install`, `ng build` (nos debería compilar correctamente) y por último `ng serve`
 
 ##### Funciones de flecha en TypeScript
