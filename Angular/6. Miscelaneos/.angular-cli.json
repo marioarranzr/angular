@@ -24,9 +24,9 @@
         "assets/font-awesome/css/font-awesome.min.css"
       ],
       "scripts": [
-        "assets/b4/js/bootstrap.min.js",
         "assets/jquery/jquery-3.2.1.slim.min.js",
-        "assets/tether/tether.js"
+        "assets/tether/tether.min.js",
+        "assets/b4/js/bootstrap.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
