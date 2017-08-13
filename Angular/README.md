@@ -228,3 +228,15 @@ Con `JSON.stringify(objeto)` y `JSON.parse(localStorage.getItem("data")` convert
 
 ### Manejo de clases desde angular
 >Para indicar a un elemento HTML que aplique una clase dependiendo de una variable, podremos hacerlo de esta manera `[class.nombreClase]="item.condicion"`
+
+#### 5. Deseos - ionic mobile app
+### Instalaciones e inicio:
+- `ng new SPA` crea el proyecto
+- `ng serve` lanzado dentro de la carpeta del proyecto compila, se queda en modo escucha y lanza el servidor en http://localhost:4200/
+
+### Aplicación:
+>Generamos el primer component ngStyle en la carpeta components de la siguiente forma `ng g c components/ngStyle -it -is`, lo que nos creará un apartado en ese component para el template y los styles, y no cree un archivo específico HTML y otro CSS para ello.
+
+>Como el componente aparece que: `selector: 'app-ng-style'`, nos referiremos a él en cualquier parte del HTML con `<app-ng-style></app-ng-style>`
+
+>
