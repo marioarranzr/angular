@@ -239,4 +239,6 @@ Con `JSON.stringify(objeto)` y `JSON.parse(localStorage.getItem("data")` convert
 
 >Como el componente aparece que: `selector: 'app-ng-style'`, nos referiremos a él en cualquier parte del HTML con `<app-ng-style></app-ng-style>`
 
->
+>Creamos nuevos componentes (en la carpeta components) con `ng g c components/{nombre} -it -is`
+
+>Creamos directivas (en la carpeta components) con `ng g d directives/{nombre} -is`
