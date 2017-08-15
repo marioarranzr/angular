@@ -1,0 +1,4 @@
+/* afecta a los elementos del app.component.html, pero no a los components incluidos en él */
+p {
+  color: blue !important;
+}

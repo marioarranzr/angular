@@ -229,7 +229,7 @@ Con `JSON.stringify(objeto)` y `JSON.parse(localStorage.getItem("data")` convert
 ### Manejo de clases desde angular
 >Para indicar a un elemento HTML que aplique una clase dependiendo de una variable, podremos hacerlo de esta manera `[class.nombreClase]="item.condicion"`
 
-#### 5. Deseos - ionic mobile app
+#### 6. Miscelaneos
 ### Instalaciones e inicio:
 - `ng new SPA` crea el proyecto
 - `ng serve` lanzado dentro de la carpeta del proyecto compila, se queda en modo escucha y lanza el servidor en http://localhost:4200/
