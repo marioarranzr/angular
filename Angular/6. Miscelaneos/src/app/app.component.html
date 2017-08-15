@@ -1,30 +1,9 @@
+<app-navbar></app-navbar>
 <div class="container main-container">
+
   <h1>Demos <small>angular</small></h1>
   <hr>
 
-  <app-ng-style></app-ng-style>
-
-  <hr>
-
-  <app-css></app-css>
-  <p>Hola desde app.component.html</p>
-
-  <hr>
-
-  <app-classes></app-classes>
-
-  <hr>
-
-  <!-- <p appResaltado>
-    Hola mundo
-  </p> -->
-  <p [appResaltado]="'orange'">
-    Hola mundo
-  </p>
-
-  <hr>
-
-  <app-ng-switch></app-ng-switch>
-
-
+  <router-outlet>
+  </router-outlet>
 </div>
